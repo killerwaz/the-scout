@@ -1,0 +1,6 @@
+# Python 3.12. Also needs Google Chrome installed (the browser tier drives the real Chrome).
+curl_cffi==0.16.3
+patchright==1.62.2
+mcp==2.3.0
+# Optional, better article text extraction:
+# trafilatura

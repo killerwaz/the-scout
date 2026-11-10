@@ -1,0 +1,60 @@
+{
+  "name": "Scout morning digest",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "b1f6a0e2-0001-4c1a-9a00-000000000001",
+      "name": "Every day at 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {},
+      "id": "b1f6a0e2-0002-4c1a-9a00-000000000002",
+      "name": "Run by hand",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8787/research",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"question\": \"What did n8n and Anthropic ship or announce in the last 24 hours?\",\n  \"notify\": \"telegram\"\n}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "b1f6a0e2-0003-4c1a-9a00-000000000003",
+      "name": "Ask the Scout",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 100]
+    }
+  ],
+  "connections": {
+    "Every day at 07:00": {
+      "main": [[{ "node": "Ask the Scout", "type": "main", "index": 0 }]]
+    },
+    "Run by hand": {
+      "main": [[{ "node": "Ask the Scout", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

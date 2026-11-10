@@ -1,0 +1,28 @@
+P2 CONTENT YIELD - words extracted per arm (higher is better)
+==============================================================================
+target              plain       pw    patch   chrome     pw% patch%
+------------------------------------------------------------------------------
+n8n-community          43     1993     1993     1993    100%   100%
+n8n-blog              397     1757     1757     1757    100%   100%
+hn                    717      717      717      717    100%   100%
+github               1733     1991     1991     1991    100%   100%
+claude-docs           791      792      792      792    100%   100%
+anthropic-eng         516      518      518      518    100%   100%
+reddit                ERR     1142     1136     1202     95%    95%
+linkedin              ERR      978      978      978    100%   100%
+medium                470      529      480      480    110%   100%
+latent-space          106      773      773      773    100%   100%
+x-twitter             391        0        0      408      0%     0%
+simonwillison        5995     5995     5995     5995    100%   100%
+------------------------------------------------------------------------------
+median yield vs real Chrome:  vanilla Playwright 100%   Patchright 100%
+
+[SUPERSEDED 2026-10-21 by PLAN.md: this verdict covered single homepage hits only; see AUDIT.md 7b and PLAN.md Phase 1.]
+VERDICT
+  Automation is not being punished on this corpus. Both automated arms recover
+  >=90% of real Chrome's content. The stealth layer is NOT load-bearing here -
+  descope it. Spend the days on the discovery layer and the recovery ladder.
+
+Then check the flags in p2_results.json: cf_challenge / login_wall / consent /
+captcha. A target that fails on 'consent' or 'login_wall' is NOT a stealth problem -
+it is a click and a cookie jar. Do not let those inflate the stealth case.

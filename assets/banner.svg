@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="The Scout: a research and browsing agent that drives a real Chrome on your own PC">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1020"/>
+      <stop offset="1" stop-color="#13213f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0.45"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <clipPath id="card"><rect width="1280" height="360" rx="24"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1280" height="360" fill="url(#bg)"/>
+    <rect width="1280" height="360" fill="url(#grid)"/>
+
+    <!-- the scope -->
+    <g transform="translate(1070 180)">
+      <circle r="210" fill="url(#glow)"/>
+      <g fill="none" stroke="#2dd4bf" stroke-opacity="0.35" stroke-width="1.5">
+        <circle r="44"/>
+        <circle r="88"/>
+        <circle r="132"/>
+      </g>
+      <g stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1">
+        <line x1="-150" y1="0" x2="150" y2="0"/>
+        <line x1="0" y1="-150" x2="0" y2="150"/>
+      </g>
+      <path d="M0 0 L132 0 A132 132 0 0 0 93.3 -93.3 Z" fill="url(#sweep)"/>
+      <line x1="0" y1="0" x2="93.3" y2="-93.3" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/>
+      <circle r="5" fill="#5eead4"/>
+      <!-- pages found -->
+      <circle cx="62" cy="-38" r="6" fill="#fbbf24"/>
+      <circle cx="62" cy="-38" r="13" fill="none" stroke="#fbbf24" stroke-opacity="0.45" stroke-width="1.5"/>
+      <circle cx="-52" cy="-70" r="4.5" fill="#5eead4"/>
+      <circle cx="-84" cy="34" r="4.5" fill="#5eead4" fill-opacity="0.7"/>
+      <circle cx="30" cy="78" r="4.5" fill="#5eead4" fill-opacity="0.5"/>
+      <circle cx="104" cy="52" r="3.5" fill="#94a3b8" fill-opacity="0.6"/>
+    </g>
+
+    <!-- words -->
+    <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+      <text x="72" y="92" fill="#5eead4" font-size="15" font-weight="600" letter-spacing="4">PERSONAL RESEARCH AGENT</text>
+      <text x="68" y="178" fill="#ffffff" font-size="88" font-weight="800" letter-spacing="-2">The Scout</text>
+      <text x="72" y="224" fill="#aab8d2" font-size="23">Ask a question. It searches, reads the pages in a real Chrome</text>
+      <text x="72" y="254" fill="#aab8d2" font-size="23">on your own PC, and answers with numbered sources.</text>
+
+      <g font-size="15" font-weight="600">
+        <rect x="72" y="286" width="304" height="36" rx="18" fill="#2dd4bf" fill-opacity="0.12" stroke="#2dd4bf" stroke-opacity="0.45"/>
+        <text x="224" y="309" fill="#99f6e4" text-anchor="middle">HTTP first, real Chrome when needed</text>
+        <rect x="388" y="286" width="206" height="36" rx="18" fill="#fbbf24" fill-opacity="0.10" stroke="#fbbf24" stroke-opacity="0.45"/>
+        <text x="491" y="309" fill="#fde68a" text-anchor="middle">Hard limits on every action</text>
+        <rect x="606" y="286" width="196" height="36" rx="18" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.25"/>
+        <text x="704" y="309" fill="#dbe4f3" text-anchor="middle">MCP · Telegram · n8n</text>
+      </g>
+    </g>
+  </g>
+</svg>
